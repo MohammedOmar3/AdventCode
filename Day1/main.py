@@ -1,7 +1,7 @@
 import csv
 import re
-from word2number import w2n
 
+## Takes a csv file and returns a list of strings
 def load_data(filename):
     mylist = []
     with open(filename) as numbers:
@@ -11,29 +11,20 @@ def load_data(filename):
             mylist.append(row[0])
         return mylist
 
+## Takes a list of strings and returns a list of integers
 def get_digits(list):
     new_digits = []
     for row in list:
         txt = "".join(str(row))
-        ##print (txt)
-        new_dig = re.findall(r'\d+', txt)
-        new_txt = "".join(new_dig)
-        final = first_last_digit(new_txt)
-        new_digits.append(final)
-    return new_digits
-
-def get_digits2(list):
-    new_digits = []
-    for row in list:
-        txt = "".join(str(row))
-        newtxt = w2n2(txt)
+        newtxt = word2number(txt)
         new_dig = re.findall(r'\d+', newtxt)
         new_txt = "".join(new_dig)
         final = first_last_digit(new_txt)
         new_digits.append(final)
     return new_digits
 
-def w2n2(number):
+## Turns word in a string to a number
+def word2number(number):
     words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
     number = (
         number.replace("one", "one1one")
@@ -55,6 +46,7 @@ def w2n2(number):
             number = number.replace(word, str(words.index(extracted_word)) )
     return number
 
+##Takes first and last digit of a string
 def first_last_digit(stringtext):
     together = ""
     if len(stringtext) > 1:
@@ -67,22 +59,36 @@ def first_last_digit(stringtext):
         together = lastdigit + firstdigit
     return together
 
+#Takes total int of a list
 def totalint(list):
-    totali = 0
+    total = 0
     for row in list:
-        totali += int(row)
-    return totali
+        total += int(row)
+    return total
 
+
+def __main__():
+    new_list = load_data('C:\\Users\\Mohammed\\Desktop\\project_starter_\\adventcode\\adventday1.csv')
+    my_number = len(new_list)
+    print(new_list)
+    new_digits = get_digits(new_list)
+    print(new_digits)
+    for row in new_digits:
+        print(row)
+    totalin = totalint(new_digits)
+    print(totalin)
+
+if __name__ == "__main__":
+    __main__()
+    
+'''    
 new_list = load_data('C:\\Users\\Mohammed\\Desktop\\project_starter_\\adventcode\\adventday1.csv')
-##for row in new_list:
-    ##print(row)
 my_number = len(new_list)
-##print(my_number)
-print("done")
 print(new_list)
-new_digits = get_digits2(new_list)
+new_digits = get_digits(new_list)
 print(new_digits)
 for row in new_digits:
    print(row)
 totalin = totalint(new_digits)
 print(totalin)
+'''
