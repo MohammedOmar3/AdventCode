@@ -86,7 +86,7 @@ def calculate_pt2(row):
 def sum_of_power(r,g,b):
     return r * g * b
 
-csvfile2 = "C:\\Users\\Mohammed\\Documents\\AdventCode\\Day2\\adventday2.csv"
+csvfile2 = "C:\\Users\\Mohammed\\Documents\\VisualStudioCode\\AdventCode\\Day2\\adventday2.csv"
 
 with open(csvfile2, 'r') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
