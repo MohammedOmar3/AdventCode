@@ -30,6 +30,7 @@ def sum_numbers_adjacent_to_symbols(filename):
                 number = grid[i][j]
                 k = j + 1
                 while k < cols and grid[i][k].isdigit():
+                    # Add the digit to the number
                     number += grid[i][k]
                     k += 1
                 # Check if any digit of the number has a symbol in its neighboring cells
