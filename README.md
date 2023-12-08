@@ -10,3 +10,13 @@ Day 1: Completed both parts and got 2 stars
 Day 2: Completed both parts and got 2 stars
 
 Day 3: Completed both parts and got 2 stars.
+
+Day 4: Completed both parts and got 2 stars.
+
+Day 5: Completed both parts and got 2 stars.
+
+Day 6: Completed both parts and got 2 stars.
+
+Day 7: Completed both parts and got 2 stars.
+
+Day 8: Completed both parts and got 2 stars.
